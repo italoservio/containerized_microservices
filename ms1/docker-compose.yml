@@ -1,0 +1,18 @@
+# docker compose up -d --build
+
+version: '3'
+
+services:
+  ms1:
+    build: .
+    image: ms1
+    container_name: ms1
+    ports:
+      - "3000:3000"
+    networks:
+      customnet:
+        ipv4_address: 171.1.0.10
+
+networks:
+  customnet:
+    external: true
